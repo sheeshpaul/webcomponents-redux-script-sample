@@ -22,8 +22,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-      increment: () => dispatch({ type: "INCREMENT" }),
-      decrement: () => dispatch({ type: "DECREMENT" })
+      increment: () => dispatch({ type: 'INCREMENT' }),
+      decrement: () => dispatch({ type: 'DECREMENT' })
     }
   }
 

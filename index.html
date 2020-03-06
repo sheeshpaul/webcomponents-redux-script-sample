@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <title>A sample project to demonstrate webcomponents-redux usage</title>
     <style>
         html {
@@ -14,35 +14,53 @@
         *:after {
             box-sizing: inherit;
         }
+
+        .container {
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
     </style>
     <!-- react bundles -->
-    <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin></script>
+    <script src='https://unpkg.com/react/umd/react.production.min.js' crossorigin></script>
+    <script src='https://unpkg.com/react-dom/umd/react-dom.production.min.js' crossorigin></script>
 
     <!-- babel bundle -->
-    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <script src='https://unpkg.com/babel-standalone/babel.min.js'></script>
 
     <!-- redux, react-redux, webcomponens-redux bundles -->
-    <script src="https://unpkg.com/redux/dist/redux.min.js"></script>
-    <script src="https://unpkg.com/react-redux/dist/react-redux.min.js"></script>
-    <script src="https://unpkg.com/webcomponents-redux/dist/webcomponents-redux.min.js"></script>
+    <script src='https://unpkg.com/redux/dist/redux.min.js'></script>
+    <script src='https://unpkg.com/react-redux/dist/react-redux.min.js'></script>
+    <script src='https://unpkg.com/webcomponents-redux/dist/webcomponents-redux.min.js'></script>
 
-    <script src="state-setup.js"></script>
-    <script src="web-components/counter-element.js"></script>
-    <script src="react-components/counter-component.js" type="text/babel"></script>
-    <script src="index.js" type="text/babel"></script>
+    <script src='state-setup.js'></script>
+    <script src='web-components/counter-element-v1.js'></script>
+    <script src='web-components/counter-element-v2.js'></script>
+    <script src='react-components/counter-component.js' type='text/babel'></script>
+    <script src='index.js' type='text/babel'></script>
 </head>
 
 <body>
     <main>
         <section>
             <h3>Web Components</h3>
-            <counter-element value="1"></counter-element>
+            <div class='container'>
+                <div class='description'>Single class model, where one class has both UI and Redux logic.</div>
+                <counter-element-v1 value='100'></counter-element-v1>
+            </div>
+            <div class='container'>
+                <div class='description'>Two class model, where Presentation class has the UI logic and Container class has the Redux logic.</div>
+                <counter-element-v2 value='1'></counter-element-v2>
+            </div>
         </section>
         <br />
         <section>
-            <h3>React Components</h3>
-            <div id="root"></div>
+            <h3>React Component</h3>
+            <div id='root'></div>
         </section>
     </main>
 </body>
