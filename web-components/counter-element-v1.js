@@ -26,8 +26,10 @@ class CounterElementV1 extends HTMLElement {
         this.shadowRoot.querySelectorAll('button')[0].addEventListener('click', () => { this.increment(); });
         this.shadowRoot.querySelectorAll('button')[1].addEventListener('click', () => { this.decrement(); });
         this.countElement = this.shadowRoot.querySelector('span');
+    }
 
-        this.connectState();
+    disconnectedCallback() {
+        // noop
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
